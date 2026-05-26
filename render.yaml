@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: build-me-an-iq-test-app-with-10-questions-and-scor
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: APP_ENV
+        value: production
